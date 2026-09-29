@@ -901,6 +901,7 @@ export default defineConfig(({ mode }) => {
   const publishSentryRelease = process.env.VERCEL_ENV === 'production' && Boolean(sentryBuild.dist);
 
   return {
+    base: '/sentinel-x/',
     html: {
       cspNonce: STATIC_SCRIPT_NONCE,
     },
