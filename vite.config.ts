@@ -901,7 +901,6 @@ export default defineConfig(({ mode }) => {
   const publishSentryRelease = process.env.VERCEL_ENV === 'production' && Boolean(sentryBuild.dist);
 
   return {
-    base: '/sentinel-x/',
     html: {
       cspNonce: STATIC_SCRIPT_NONCE,
     },
@@ -1374,6 +1373,7 @@ export default defineConfig(({ mode }) => {
       },
     },
     server: {
+      allowedHosts: ['sentinel-x-bhel.onrender.com'],
       port: devPort,
       open: !isE2E,
       hmr: isE2E ? false : undefined,
